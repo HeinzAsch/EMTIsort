@@ -1,7 +1,7 @@
 #ifndef SORT_H
 #define SORT_H
 
-
+#include <time.h>
 #include "SFU-common.h"
 #include "griflist-format.h"
 

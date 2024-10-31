@@ -13,15 +13,20 @@ int main(int argc, char *argv[])
   int i;
   size_t son;
   node nd;
+  int lines;
   
   son=sizeof(node);
 
-  if(argc!=2)
+  if((argc<2)||(argc>3))
     {
       printf("griflist_read list_input_data [number]\n");
       exit(-1);
     }
-  
+
+  if(argc==3)
+    lines=atoi(argv[2]);
+  else
+    lines=-1;
  
   printf("Program reads an ordered list of fragments created from GRIF3/GRIF4 midas file.\n");
 
@@ -40,6 +45,9 @@ int main(int argc, char *argv[])
  
       if(nd.chan>1000 && nd.trig>0) tip_count++;
       i++;
+
+      if((lines>0)&&(i>=lines))
+	break;
    
     };
   printf("Number of TIP channels with TRIGGER:  %d\n",tip_count);

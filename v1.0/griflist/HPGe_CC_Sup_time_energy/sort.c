@@ -2,6 +2,8 @@
 /*================================================================*/
 int main(int argc, char *argv[])
 {
+  clock_t start,end;
+  double time;
   FILE* inp;
   static gmap map;
   size_t son;
@@ -17,6 +19,7 @@ int main(int argc, char *argv[])
       printf("griflist_HPGe_CC_Sup_time_energy griflist_input_data map window_[ns]\n");
       exit(-1);
     }
+  start=clock();
 
   
   printf("Program sorts time difference histogram between HPGe CC and Sup fragments within a time window on the list\n");
@@ -97,7 +100,7 @@ int main(int argc, char *argv[])
 
   fclose(inp);
 
-  TFile f("tsdiff_vs_charge_sup.root","recreate");
+  TFile f("tsdiff_vs_charge_cc-sup.root","recreate");
   
   h->GetYaxis()->SetTitle("TSdiff");
   h->GetXaxis()->SetTitle("CC Charge");
@@ -112,4 +115,8 @@ int main(int argc, char *argv[])
   h2->GetYaxis()->CenterTitle(true);
   h2->SetOption("COLZ");
   h2->Write();
+  
+  end=clock();
+  time=(double)(end-start)/CLOCKS_PER_SEC;
+  printf("\nSorting time %8.2f seconds\n",time);
 }

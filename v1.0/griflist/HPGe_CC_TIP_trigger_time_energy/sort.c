@@ -2,6 +2,8 @@
 /*================================================================*/
 int main(int argc, char *argv[])
 {
+  clock_t start,end;
+  double time;
   FILE* inp;
   static gmap map;
   size_t son;
@@ -15,6 +17,7 @@ int main(int argc, char *argv[])
       printf("griflist_HPGe_CC_TIP_time_difference griflist_input_data map window_[ns]\n");
       exit(-1);
     }
+  start=clock();
   
  
   printf("Program sorts time difference histogram between HPGe CC and TIP fragments within a time window on the list\n");
@@ -105,4 +108,7 @@ int main(int argc, char *argv[])
   h->SetOption("COLZ");
   h->Write();
   
+  end=clock();
+  time=(double)(end-start)/CLOCKS_PER_SEC;
+  printf("\nSorting time %8.2f seconds\n",time);
 }
