@@ -1,0 +1,4 @@
+v5.0.8  can sort and verify a list with triggers for the GRIF part of the data stream for TIP/TIGRESS/EMMA
+v5.1.1  can do the above and convert to the SFU format without EMMA DAQ readout, it also includes a few diagnostic codes for a file in the SFU format
+v5.1.2  added very-clean rules for everything, added optional functionality to griflist_read, and tidied up grif2list
+v5.1.3  made the time gating codes apply gates consistently, added timers to gating and check codes
