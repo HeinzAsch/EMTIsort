@@ -90,7 +90,6 @@ int analyze_fragment_for_assembly(emmat_event* ptr, et_data_pointers* dp, etnode
   if(ptr->tshigh<tslast)
     wrap++;
 
-
   tsns=0x100000000*wrap;
   tsns+=(ptr->tshigh)<<5;
   tsns+=ptr->tslow;

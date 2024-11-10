@@ -11,9 +11,18 @@ all:
 	(cd add_EMMAT_triggers && make -is clean && make && make -is clean && cd ..)
 	echo DONE: ADD_EMMAT_TRIGGERS.
 
+	echo Making check_GRIF_gate.
+	(cd check_GRIF_gate && make -is clean && make && make -is clean && cd ..)
+	echo DONE: CHECK_GRIF_GATE.
+
+	echo Making check_EMMAT_gate.
+	(cd check_EMMAT_gate && make -is clean && make && make -is clean && cd ..)
+	echo DONE: CHECK_EMMAT_GATE.
 clean:
-	(cd read && make -is clean && cd ..)
-	(cd emmatlist_tsns_offset  && make -is clean && cd ..)
+	(cd read && make -is clean  && cd ..)
+	(cd emmatlist_tsns_offset   && make -is clean && cd ..)
 	(cd add_EMMAT_triggers      && make -is clean && cd ..)
+	(cd check_GRIF_gate         && make -is clean && cd ..)
+	(cd check_EMMAT_gate        && make -is clean && cd ..)
 	rm -f *~
 	echo DONE: Making clean.
