@@ -35,6 +35,10 @@ all:
 	(cd emmaa_fragment r && make -is clean && make && make -is clean && cd ..)
 	echo DONE: VIEW_EMMAA_FRAGMENT.
 
+	echo Making view_hist_tsup.
+	(cd hist_tsup r && make -is clean && make && make -is clean && cd ..)
+	echo DONE: VIEW_HIST_TSUP.
+
 clean:
 	(cd griff_channel        && make -is clean && cd ..)
 	(cd griff_fragment       && make -is clean && cd ..)
@@ -43,5 +47,6 @@ clean:
 	(cd emmat_fragment       && make -is clean && cd ..)
 	(cd emmaa_timing         && make -is clean && cd ..)
 	(cd emmaa_fragment       && make -is clean && cd ..)
+	(cd hist_tsup            && make -is clean && cd ..)
 
 	rm -f *~

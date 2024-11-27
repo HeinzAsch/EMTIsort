@@ -86,7 +86,7 @@ int analyze_fragment_for_assembly(emmat_event* ptr, et_data_pointers* dp, etnode
   
   long long tsns;
   etnode nd;
-   
+     
   if(ptr->tshigh<tslast)
     wrap++;
 
@@ -103,11 +103,29 @@ int analyze_fragment_for_assembly(emmat_event* ptr, et_data_pointers* dp, etnode
   nd.trignum=ptr->trignum;
   nd.tsup=ptr->tshigh;
   nd.ts=ptr->tslow;
-    
-  total_FRAGMENTS++;
 
+  //PGAC Anode
+  nd.anodeTop=ptr->lf[0];
+  nd.anodeMiddle=ptr->lf[1];
+  nd.anodeBottom=ptr->lf[2];
+
+  //PGAC X
+  nd.cathodeLeft=ptr->lf[3];
+  nd.cathodeRight=ptr->lf[4];
+
+  //PGAC Y
+  nd.cathodeTop=ptr->lf[5];
+  nd.cathodeBottom=ptr->lf[6];
+
+  //PGAC Trigger, OR of Anodes
+  nd.anodeTrigger=ptr->lf[7];
+
+  //ISAC RF
+  nd.RF=ptr->lf[8];
   
-   add_etnode(&nd,dp,list);
+  total_FRAGMENTS++;
+  
+  add_etnode(&nd,dp,list);
  
   tslast=ptr->tshigh;
   return 0;

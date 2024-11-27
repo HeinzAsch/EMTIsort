@@ -15,7 +15,7 @@ SORT= sort.o\
       $(EMTIsort)/current/utils/utils.a
 
 sort:$(SORT)
-	$(CC) -o $(BIN)/sfu_Tigress_ECalABSupp $(SORT) $(CFLAGS) $(ROOT) -lm -ldl
+	$(CC) -o $(BIN)/sfu_TIGRESS_ECalABSupp $(SORT) $(CFLAGS) $(ROOT) -lm -ldl
 
 sort.o:sort.c sort.h
 	$(CC) -c -o sort.o sort.c $(CFLAGS) $(INC)

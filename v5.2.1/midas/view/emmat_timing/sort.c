@@ -29,18 +29,30 @@ int analyze_emmat_fragment(emmat_event* ptr)
 /*================================================================*/
 int main(int argc, char *argv[])
 {
- 
+  int wrapStart;
+  
   counter=0;
   wrap=0;
   last=0;
 
-  if(argc!=2)
+  if((argc!=2)&&(argc!=3))
     {
-      printf("view_emmat_fragment midas_input_data\n");
+      printf("view_emmat_fragment midas_input_data [wrap]\n");
+      printf("wrap defaults to 0, but may be a larger for subruns beyond the zeroth.\n");
+      printf("This corrects the clock resetting, and should be >=0.\n");
       exit(-1);
     }
- 
+
+  if(argc==3)
+    if(atoi(argv[2])>=0)
+      wrap=atoi(argv[2]);
+    
+  wrapStart=wrap;
+  
   /* do sorting */
   sort_but_not_assemble(argv[1]);
   printf("Program provides information on consecutive fragments.\n");
+
+  printf("\nFile began with wrap = %d\n",wrapStart);
+  printf("File ended with wrap = %d\n",wrap);
 }

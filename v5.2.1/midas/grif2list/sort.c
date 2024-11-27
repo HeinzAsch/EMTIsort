@@ -17,9 +17,13 @@ int main(int argc, char *argv[])
   
   min_TSUP = -1;
   max_TSUP = -1;
+  prev_TSUP = -1;
 
   minmax_DROPPED = 0;
   pileup_DROPPED = 0;
+  cfd_DROPPED = 0;
+  map_DROPPED = 0;
+  zero_DROPPED = 0;
   
   if(argc!=6)
     {
@@ -44,11 +48,14 @@ int main(int argc, char *argv[])
   fclose(out);
 
   printf("Total fragments counted: %d\n", total_FRAGMENTS);
-  printf("Total fragments dropped by minmax_TSUP: %d\n", minmax_DROPPED);
+  printf("\nIn the order of appearance in state-machine:\n");
+  printf("Total fragments dropped by being off-map: %d\n", map_DROPPED);
   printf("Total fragments dropped by pileup != 1: %d\n", pileup_DROPPED);
-  printf("Total fragments dropped: %d\n", (minmax_DROPPED+pileup_DROPPED));
-  printf("Percentage dropped: %.2f%%\n", (100*((float)(minmax_DROPPED+pileup_DROPPED))/((float)(total_FRAGMENTS))));
-
+  printf("Total fragments dropped by CFD <= 5: %d\n", cfd_DROPPED);
+  printf("Total fragments dropped by tsup == 0: %d\n", zero_DROPPED);  
+  printf("Total fragments dropped by minmax_TSUP: %d\n", minmax_DROPPED);
+  printf("\nTotal fragments dropped: %d\n", (minmax_DROPPED+pileup_DROPPED+map_DROPPED+cfd_DROPPED+zero_DROPPED));
+  printf("Percentage dropped: %.2f%%\n", (100*((float)(minmax_DROPPED+pileup_DROPPED+map_DROPPED+cfd_DROPPED+zero_DROPPED))/((float)(total_FRAGMENTS))));
 
   //TIMEKEEPING
   end=clock();

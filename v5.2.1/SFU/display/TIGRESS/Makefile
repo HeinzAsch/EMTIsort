@@ -12,7 +12,7 @@ SORT= sort.o\
       $(EMTIsort)/current/SFU-format/SFU-format.a
 
 sort:$(SORT)
-	$(CC) -o $(BIN)/sfu_display_Tigress $(SORT) $(CFLAGS) $(ROOT) -lm -ldl
+	$(CC) -o $(BIN)/sfu_display_TIGRESS $(SORT) $(CFLAGS) $(ROOT) -lm -ldl
 
 sort.o:sort.c sort.h
 	$(CC) -c -o sort.o sort.c $(CFLAGS) $(INC)

@@ -100,7 +100,21 @@ int analyze_fragment_for_assembly(emmaa_event* ptr, ea_data_pointers* dp, eanode
   nd.trignum=-1;
   nd.tsup=ptr->tshigh;
   nd.ts=ptr->tslow;
-    
+
+  //PGAC Anode
+  nd.anodeTop=ptr->adc[0];
+  nd.anodeMiddle=ptr->adc[1];
+  nd.anodeBottom=ptr->adc[2];
+
+  //SSB
+  nd.SSB=ptr->adc[3];
+
+  //IC
+  nd.IC[0]=ptr->adc[16];
+  nd.IC[1]=ptr->adc[17];
+  nd.IC[2]=ptr->adc[18];
+  nd.IC[3]=ptr->adc[19];
+      
   total_FRAGMENTS++;
 
   add_eanode(&nd,dp,list);

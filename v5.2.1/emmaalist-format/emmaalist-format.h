@@ -19,6 +19,11 @@ typedef struct eanode
   unsigned              ts;
   int                   trig;
   unsigned long long    trig_tsns;
+  unsigned anodeTop; //channel 0
+  unsigned anodeMiddle; //channel 1
+  unsigned anodeBottom; //channel 2
+  unsigned SSB; //channel 3
+  unsigned IC[4]; //channels 16-19
 }eanode;
 
 int ea_print_list(int, int, eanode*);

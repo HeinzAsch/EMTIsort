@@ -15,15 +15,16 @@ typedef struct emmat_fragment_struct {
   unsigned geo;
   unsigned chanid;
   unsigned pcktid;
-  //  unsigned eflag;
-  unsigned fl[16];
-  unsigned ft[16];
-  unsigned lf[16];
-  unsigned tf[16];
-  unsigned ls[16];
-  unsigned ts[16];
-  unsigned lt[16];
-  unsigned tt[16];
+  //EMMA TDC output
+  //Chan 0-9 : Anode Top, Middle, Bottom, Cathode Right, Left, Top, Bottom, Trigger (Anode OR), RF
+  unsigned fl[16]; //flag for leading edge
+  unsigned ft[16]; //flag for trailing edge
+  unsigned lf[16]; //leading edge, first
+  unsigned tf[16]; //trailing edge, first
+  unsigned ls[16]; //leading edge, second
+  unsigned ts[16]; //trailing edge, second
+  unsigned lt[16]; //leading edge, third
+  unsigned tt[16]; //trailing edge, third
 } emmat_event;
 
 

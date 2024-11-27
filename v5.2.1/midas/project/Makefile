@@ -27,6 +27,10 @@ all:
 	(cd emmat_timing_histogram r && make -is clean && make  && make -is clean && cd ..)
 	echo DONE: PROJECT_EMMAT_TIMING_HISTOGRAM.
 
+	echo Making project_emmat_PGAC.
+	(cd emmat_PGAC r && make -is clean && make  && make -is clean && cd ..)
+	echo DONE: PROJECT_EMMAT_PGAC.
+
 clean:
 	(cd emma_adc_channel          && make -is clean && cd ..)
 	(cd emma_adc_hits             && make -is clean && cd ..)

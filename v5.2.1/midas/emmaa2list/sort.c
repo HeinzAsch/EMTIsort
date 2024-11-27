@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
   if(argc!=4)
     {
       printf("emmaa2list midas_input_data list_output_data map\n");
-      printf("This code aims to convert and clean .mid files into .list");
+      printf("This code aims to convert and clean .mid files into .list\n");
       exit(-1);
     }
 
