@@ -18,11 +18,16 @@ all:
 	echo Making project_PGAC.
 	(cd project_PGAC && make -is clean && make && make -is clean && cd ..)
 	echo DONE: PROJECT_PGAC.
+
+	echo Making combine.
+	(cd combine && make -is clean && make && make -is clean && cd ..)
+	echo DONE: COMBINE.
 clean:
 	(cd read && make -is clean && cd ..)
 	(cd griflist_tsns_offset   && make -is clean && cd ..)
 	(cd add_GRIF_triggers      && make -is clean && cd ..)
 	(cd check_GRIF_gate        && make -is clean && cd ..)
 	(cd project_PGAC	   && make -is clean && cd ..)
+	(cd combine                && make -is clean && cd ..)
 	rm -f *~
 	echo DONE: Making clean.

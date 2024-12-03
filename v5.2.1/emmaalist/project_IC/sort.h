@@ -8,14 +8,12 @@
 #include "TApplication.h"
 
 #define GATE 10000
-#define PGACWidth 80
-#define PGACHeight 30
 
-TH2D *h;
+TH2D *h[9];
 TCanvas *c;  
 TApplication *theApp;
 #include <time.h>
-#include "emmatlist-format.h"
+#include "emmaalist-format.h"
 #include "griflist-format.h"
 
 

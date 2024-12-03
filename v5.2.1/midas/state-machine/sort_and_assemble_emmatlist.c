@@ -109,9 +109,9 @@ int analyze_fragment_for_assembly(emmat_event* ptr, et_data_pointers* dp, etnode
   nd.anodeMiddle=ptr->lf[1];
   nd.anodeBottom=ptr->lf[2];
 
-  //PGAC X
-  nd.cathodeLeft=ptr->lf[3];
-  nd.cathodeRight=ptr->lf[4];
+  //PGAC X  
+  nd.cathodeRight=ptr->lf[3];
+  nd.cathodeLeft=ptr->lf[4];
 
   //PGAC Y
   nd.cathodeTop=ptr->lf[5];

@@ -31,6 +31,10 @@ all:
 	(cd emmat_PGAC r && make -is clean && make  && make -is clean && cd ..)
 	echo DONE: PROJECT_EMMAT_PGAC.
 
+	echo Making project_emmaa_IC.
+	(cd emmaa_IC r && make -is clean && make  && make -is clean && cd ..)
+	echo DONE: PROJECT_EMMAA_IC.
+
 clean:
 	(cd emma_adc_channel          && make -is clean && cd ..)
 	(cd emma_adc_hits             && make -is clean && cd ..)
@@ -39,4 +43,6 @@ clean:
 	(cd channelHP                 && make -is clean && cd ..)
 	(cd emmaa_histogram           && make -is clean && cd ..)
 	(cd emmat_timing_histogram    && make -is clean && cd ..)
+	(cd emmat_PGAC                && make -is clean && cd ..)
+	(cd emmaa_IC                  && make -is clean && cd ..)
 	rm -f *~
